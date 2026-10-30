@@ -25,11 +25,11 @@ Now open your browser (Chrome, Brave, Edge or any Chromium browser) and go to:
 
   1. Turn on "Developer mode"  (toggle, top right)
   2. Click "Load unpacked"
-  3. Press Cmd+Shift+G, paste (Cmd+V), press Enter, then click "Select"
+  3. In the file dialog go to Documents > QuickSightSessionKeeper and click "Select"
   4. A settings page opens. Paste the QuickSight SSO link and click Save.
      (Get the link from the Google apps grid: right-click the QuickSight tile,
       "Copy link address".)
 
 If the extension is already installed, just click its reload icon instead.
-It signs you into QuickSight within a minute and every 6 hours after that.
+It signs you into QuickSight within a minute and every 10 hours after that.
 MSG

@@ -1,7 +1,7 @@
 # QuickSight Session Keeper
 
 Chrome extension that keeps the QuickSight console signed in. AWS hard-caps every QuickSight
-session at 12 hours; this re-runs your Google SSO login in a background tab every 6 hours so
+session at 12 hours; this re-runs your Google SSO login in a background tab every 10 hours so
 you never see the signed-out page. Works for any organisation that signs in to QuickSight
 through Google Workspace SAML; nothing is hardcoded, you paste your own SSO link once.
 
@@ -30,9 +30,9 @@ edge://extensions
 
 **4. Turn on Developer mode.** It is a toggle at the top right of the extensions page.
 
-**5. Load the extension folder.** Click **Load unpacked**. In the file dialog press
-`Cmd+Shift+G`, paste (`Cmd+V`), press Enter, then click **Select**. The folder path was already
-put on your clipboard by step 1.
+**5. Load the extension folder.** Click **Load unpacked**. In the file dialog that opens, go to
+your **Documents** folder, click the **QuickSightSessionKeeper** folder once to highlight it, and
+click **Select**. The extension card appears on the page.
 
 **6. Paste your QuickSight SSO link.** A settings page opens automatically. Get the link like this:
 
@@ -45,7 +45,7 @@ The link looks like `https://accounts.google.com/o/saml2/initsso?idpid=...&spid=
 **7. Log in once.** Click **Log in now** on the settings page, or just open QuickSight normally
 and sign in. The status box shows **OK** with the next run time.
 
-That's it. From now on the extension renews your QuickSight login every 6 hours in the background.
+That's it. From now on the extension renews your QuickSight login every 10 hours in the background.
 
 ## Update
 
@@ -61,7 +61,7 @@ Run the same command again, then click the reload icon on the extension card.
 
 ## How it works
 
-Every 6 hours the extension opens the Google SSO link for QuickSight in a background tab,
+Every 10 hours the extension opens the Google SSO link for QuickSight in a background tab,
 clicks through the account chooser if needed, waits for QuickSight to load, and closes the tab.
 Open QuickSight tabs are sent back to their original URL; the tab you are working in is
 restored only after you switch away from it.
