@@ -13,8 +13,9 @@ Paste this in Terminal:
 curl -fsSL https://raw.githubusercontent.com/kuldeepkr16/qs-session-keeper/main/install.sh | bash
 ```
 
-It downloads the extension to `~/Documents/QuickSightSessionKeeper`, copies that path to your
-clipboard and opens `chrome://extensions`. Then:
+It downloads the extension to `~/Documents/QuickSightSessionKeeper` and copies that path to your
+clipboard. Then open your browser (Chrome, Brave, Edge or any Chromium browser) and go to
+`chrome://extensions` (or `brave://extensions`, `edge://extensions`):
 
 1. Turn on **Developer mode** (toggle, top right).
 2. Click **Load unpacked**.
