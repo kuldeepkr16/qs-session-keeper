@@ -5,26 +5,47 @@ session at 12 hours; this re-runs your Google SSO login in a background tab ever
 you never see the signed-out page. Works for any organisation that signs in to QuickSight
 through Google Workspace SAML; nothing is hardcoded, you paste your own SSO link once.
 
-## Install (Mac, about 30 seconds)
+## Install (Mac, about 1 minute)
 
-Paste this in Terminal:
+**1. Run the install command.** Open Terminal (Cmd+Space, type "Terminal", Enter) and paste:
 
 ```
 curl -fsSL https://raw.githubusercontent.com/kuldeepkr16/qs-session-keeper/main/install.sh | bash
 ```
 
-It downloads the extension to `~/Documents/QuickSightSessionKeeper` and copies that path to your
-clipboard. Then open your browser (Chrome, Brave, Edge or any Chromium browser) and go to
-`chrome://extensions` (or `brave://extensions`, `edge://extensions`):
+This downloads the extension to `~/Documents/QuickSightSessionKeeper` and copies that folder
+path to your clipboard. Nothing else is changed on your machine.
 
-1. Turn on **Developer mode** (toggle, top right).
-2. Click **Load unpacked**.
-3. Press `Cmd+Shift+G`, paste, Enter, **Select**.
-4. A settings page opens. Paste your organisation's QuickSight SSO link and click **Save**.
-   Get the link from the Google apps grid: right-click the QuickSight tile, **Copy link address**.
-   It looks like `https://accounts.google.com/o/saml2/initsso?idpid=...&spid=...`.
+**2. Open the browser you use for QuickSight.** Use the same browser and profile where you are
+already logged in to QuickSight with your work Google account. Chrome, Brave, Edge or any
+Chromium browser works.
 
-Done. It signs you in within a minute and every 6 hours after that.
+**3. Open a new tab and go to the extensions page.** Type one of these in the address bar:
+
+```
+chrome://extensions
+brave://extensions
+edge://extensions
+```
+
+**4. Turn on Developer mode.** It is a toggle at the top right of the extensions page.
+
+**5. Load the extension folder.** Click **Load unpacked**. In the file dialog press
+`Cmd+Shift+G`, paste (`Cmd+V`), press Enter, then click **Select**. The folder path was already
+put on your clipboard by step 1.
+
+**6. Paste your QuickSight SSO link.** A settings page opens automatically. Get the link like this:
+
+- Open any Google page (Gmail, Drive) and click the **Google apps** grid icon at the top right.
+- Find the **QuickSight** tile. **Right-click** it and choose **Copy clean link**.
+- Paste the link into the **Google SSO URL** field on the settings page and click **Save**.
+
+The link looks like `https://accounts.google.com/o/saml2/initsso?idpid=...&spid=...`.
+
+**7. Log in once.** Click **Log in now** on the settings page, or just open QuickSight normally
+and sign in. The status box shows **OK** with the next run time.
+
+That's it. From now on the extension renews your QuickSight login every 6 hours in the background.
 
 ## Update
 
