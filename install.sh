@@ -14,18 +14,18 @@ SRC="$(find "$TMP" -mindepth 1 -maxdepth 1 -type d | head -1)"
 mkdir -p "$DEST"
 cp "$SRC"/manifest.json "$SRC"/*.js "$SRC"/options.html "$SRC"/icon.png "$DEST/"
 printf '%s' "$DEST" | pbcopy
-open -a "Google Chrome" "chrome://extensions" || true
 
 cat <<MSG
 
 Installed to:  $DEST
 (this path is already copied to your clipboard)
 
-Chrome has opened the extensions page. Finish with 3 clicks:
+Now open your browser (Chrome, Brave, Edge or any Chromium browser) and go to:
+  chrome://extensions        (brave://extensions or edge://extensions also work)
+
   1. Turn on "Developer mode"  (toggle, top right)
   2. Click "Load unpacked"
   3. Press Cmd+Shift+G, paste (Cmd+V), press Enter, then click "Select"
-
   4. A settings page opens. Paste the QuickSight SSO link and click Save.
      (Get the link from the Google apps grid: right-click the QuickSight tile,
       "Copy link address".)
