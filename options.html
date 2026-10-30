@@ -1,0 +1,31 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>QuickSight Session Keeper</title>
+<style>
+  body{font:14px system-ui,sans-serif;margin:16px;min-width:360px;color:#222}
+  label{display:block;margin:10px 0 4px;font-weight:600}
+  input{width:100%;box-sizing:border-box;padding:6px;border:1px solid #bbb;border-radius:4px}
+  button{margin-top:12px;padding:8px 14px;border:0;border-radius:4px;background:#232f3e;color:#fff;cursor:pointer}
+  button.secondary{background:#ff9900;color:#111;margin-left:8px}
+  #status{margin-top:12px;padding:8px;border-radius:4px;background:#f3f3f3;white-space:pre-wrap}
+  small{color:#666}
+</style></head>
+<body>
+  <h3 style="margin:0 0 8px">QuickSight Session Keeper</h3>
+  <label>Google SSO URL for QuickSight</label>
+  <input id="ssoUrl" placeholder="https://accounts.google.com/o/saml2/initsso?idpid=...&spid=...">
+  <small>Open the Google apps grid, right-click the QuickSight tile and copy its link.</small>
+  <label>Google account email (optional)</label>
+  <input id="email" placeholder="you@yourcompany.com">
+  <small>Only needed when more than one Google account is signed in on this laptop.</small>
+  <label>Re-login every (hours)</label>
+  <input id="intervalHours" type="number" min="1" max="11" step="1">
+  <label>Give up after (seconds)</label>
+  <input id="timeoutSec" type="number" min="30" max="600" step="10">
+  <div>
+    <button id="save">Save</button>
+    <button id="now" class="secondary">Log in now</button>
+  </div>
+  <div id="status">No runs yet.</div>
+  <script src="config.js"></script>
+  <script src="options.js"></script>
+</body></html>

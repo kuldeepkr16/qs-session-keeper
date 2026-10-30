@@ -1,0 +1,4 @@
+.DS_Store
+*.zip
+make_package.sh
+INSTALL.txt

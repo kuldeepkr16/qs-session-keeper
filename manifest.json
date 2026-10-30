@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "QuickSight Session Keeper",
+  "version": "1.0.0",
+  "description": "Re-runs the Google SSO login for QuickSight on a timer so the console session never hits the 12-hour cutoff.",
+  "permissions": ["alarms", "tabs", "storage", "scripting", "notifications"],
+  "host_permissions": [
+    "https://accounts.google.com/*",
+    "https://*.google.com/*",
+    "https://signin.aws.amazon.com/*",
+    "https://*.signin.aws.amazon.com/*",
+    "https://*.awsapps.com/*",
+    "https://*.quicksight.aws.amazon.com/*",
+    "https://*.amazonquick.com/*",
+    "https://*.quicksuite.aws/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://accounts.google.com/*"],
+      "js": ["content_google.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": { "default_popup": "options.html", "default_title": "QuickSight Session Keeper" },
+  "options_page": "options.html"
+}
